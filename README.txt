@@ -1,21 +1,12 @@
-#  NovaModa — Urban Street Wear  
-**Semestrální projekt:** Komponentová knihovna webového rozhraní  
-**Autor:** [Tvé jméno]  
-**Předmět:** Webové technologie (FIM UHK)  
-**Datum odevzdání:** říjen 2025  
 
----
+Popis projektu
 
-##  Popis projektu
+Projekt NovaModa představuje fiktivní e-shop s urban/streetwear oblečením.  
+Cílem je demonstrovat schopnost vytvořit komponentovou knihovnu webového rozhraní pomocí HTML5, CSS (rozděleného do modulů) a JavaScriptu.  
 
-Projekt **NovaModa** představuje fiktivní e-shop s urban/streetwear oblečením.  
-Cílem je demonstrovat schopnost vytvořit **komponentovou knihovnu webového rozhraní** pomocí HTML5, CSS (rozděleného do modulů) a JavaScriptu.  
+Web je kompletně responzivní, přístupný a využívá systematické stylování pomocí design tokens, komponentové struktury a utility tříd.
 
-Web je kompletně responzivní, přístupný a využívá **systematické stylování pomocí design tokens**, **komponentové struktury** a **utility tříd**.
-
----
-
-##  Struktura projektu
+Struktura projektu
 
 NovaModa/
 │
@@ -39,7 +30,7 @@ NovaModa/
 Autor
 
 Jméno: Adam Picka
-E-mail: student@uhk.cz
+E-mail: pickaad1@uhk.cz
 
-Studijní program: Informační management, FIM UHK
+Studijní program: Aplikovaná informatika, FIM UHK
 GitHub: github.com/AdamP-Iot
