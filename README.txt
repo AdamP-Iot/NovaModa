@@ -17,14 +17,15 @@ NovaModa/
 │ ├── utilities.css # Pomocné utility třídy (marginy, paddingy, flex)
 │ ├── layout.css # Layout, gridy, sekce, responzivita
 │ └── components.css # Komponenty (header, hero, karty, footer, tlačítka)
-│
+│ 
+├── data/
+│ ├── content.json # Json soubor s daty (produkty, kontaky)
+│ 
 ├── js/
-│ └── main.js # Přepínání mobilní navigace (toggle menu)
+│ └── main.js # Javascript na propojení Json souboru s indexem.html
 │
-├── index.html # Hlavní stránka (hero, produkty, statistiky)
-├── katalog.html # Přehled produktů – katalog
-├── detail.html # Detail produktu
-├── kontakty.html # Kontaktní stránka s formulářem
+├── index.html # Hlavní stránka 
+│
 └── README.md # Popis projektu
 
 Autor

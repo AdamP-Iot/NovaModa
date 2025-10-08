@@ -1,0 +1,89 @@
+{
+  "hero": {
+    "title": "Urban Style",
+    "subtitle": "Tvůj Street Wear",
+    "lead": "Objev nejnovější kolekci urban módy. Autentický streetwear styl pro ty, kteří nejdou s davem.",
+    "cta1": "Prohlédnout kolekci",
+    "cta2": "Zjistit více"
+  },
+
+  "stats": [
+    { "value": "500+", "label": "Produktů" },
+    { "value": "10K+", "label": "Zákazníků" },
+    { "value": "15",   "label": "Značek" },
+    { "value": "4.8★", "label": "Hodnocení" }
+  ],
+
+  "featured": ["mikina1", "tee1", "bunda1"],
+
+  "products": [
+    {
+      "id": "mikina1",
+      "title": "Urban Black Hoodie",
+      "category": "Mikiny",
+      "price": "1 299 Kč",
+      "ratingText": "★★★★★ (127)",
+      "badge": "Novinka",
+      "image": "https://images.unsplash.com/photo-1614214191247-5b2d3a734f1b?q=80&w=764&auto=format&fit=crop",
+      "description": "Prémiová mikina s kapucí inspirovaná městským stylem. Vyrobená z kvalitní bavlny pro maximální pohodlí. Minimalistický design, ideální pro každodenní nošení."
+    },
+    {
+      "id": "tee1",
+      "title": "Oversized Street Tee",
+      "category": "Trička",
+      "price": "599 Kč",
+      "ratingText": "★★★★☆ (98)",
+      "badge": "-30%",
+      "image": "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&h=300&fit=crop",
+      "description": "Oversized tričko z měkké bavlny s minimalistickým logem NovaModa. Volnější střih pro maximální pohodlí, ideální pro streetwear look."
+    },
+    {
+      "id": "bunda1",
+      "title": "Midnight Windbreaker",
+      "category": "Bundy",
+      "price": "1 999 Kč",
+      "ratingText": "★★★★★ (52)",
+      "badge": "Limitka",
+      "image": "https://images.unsplash.com/photo-1710165052772-7f2c3aa5444a?q=80&w=764&auto=format&fit=crop",
+      "description": "Lehká streetwear bunda s voděodolným povrchem a reflexními prvky. Kombinuje funkčnost a čistý městský design."
+    },
+    {
+      "id": "cargo1",
+      "title": "Cargo Utility Pants",
+      "category": "Kalhoty",
+      "price": "1 499 Kč",
+      "ratingText": "★★★★★",
+      "badge": "",
+      "image": "https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=687&auto=format&fit=crop",
+      "description": "Funkční cargo kalhoty s praktickými kapsami a odolným materiálem. Moderní střih pro autentický urban look."
+    },
+    {
+      "id": "cap1",
+      "title": "Urban Fit Cap",
+      "category": "Doplňky",
+      "price": "399 Kč",
+      "ratingText": "★★★★★",
+      "badge": "",
+      "image": "https://images.unsplash.com/photo-1500964935344-6219dea133e4?q=80&w=765&auto=format&fit=crop",
+      "description": "Stylová čepice, která doladí každý outfit. Pevný tvar a minimalistické logo pro každodenní nošení."
+    },
+    {
+      "id": "sneakers1",
+      "title": "Nova Sneakers",
+      "category": "Boty",
+      "price": "2 499 Kč",
+      "ratingText": "★★★★★",
+      "badge": "",
+      "image": "https://plus.unsplash.com/premium_photo-1685175199155-110c178cc43a?q=80&w=687&auto=format&fit=crop",
+      "description": "Ikonické tenisky propojující street styl a pohodlí. Lehká konstrukce a odolná podrážka pro celodenní nošení."
+    }
+  ],
+
+  "contacts": {
+    "title": "Kontakt",
+    "description": "Máte dotazy? Napište nám!",
+    "email": "info@novamoda.cz",
+    "phone": "+420 777 123 456",
+    "address": "Ulice 123, Hradec Králové"
+  }
+}
