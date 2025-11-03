@@ -1,35 +1,98 @@
+/* =========================================
+   COMPONENTS
+   - Hlavička a navigace
+   - Košík
+   - Popup (studentský projekt)
+   - Hero
+   - Tlačítka
+   - Produktové karty
+   - Info box
+   - Disclaimer
+   - Statistiky / dashboard
+   - Footer
+   ========================================= */
+
+/* ---------- Header / Nav ---------- */
 .header {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: var(--shadow-md);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-md);
 }
 .header__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
 }
 .header__logo {
-    font-size: var(--font-size-2xl);
-    font-weight: 900;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  font-size: var(--font-size-2xl);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
-.header__logo span {
-    color: var(--color-primary);
+.header__logo span { color: var(--color-primary); }
+
+/* Navigace */
+.nav__list {
+  display: flex;
+  gap: var(--space-8);
+  align-items: center;
 }
+.nav__link {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: var(--font-size-sm);
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease;
+  position: relative;
+}
+.nav__link:hover,
+.nav__link:focus { color: var(--color-primary); }
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  transition: width 0.3s ease;
+}
+.nav__link:hover::after,
+.nav__link:focus::after { width: 100%; }
+
+/* Aktivní stav (pro hash routing) */
+.nav__link.active { color: var(--color-primary); }
+.nav__link.active::after { width: 100%; }
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-2);
+}
+.nav__toggle span {
+  width: 24px;
+  height: 3px;
+  background-color: var(--color-white);
+  transition: all 0.3s ease;
+}
+
+/* ---------- Header – ikona košíku ---------- */
 .header__cart {
   color: var(--color-neutral-100);
   font-size: 1.4rem;
   text-decoration: none;
   position: relative;
+  margin-left: var(--space-4);
 }
 .cart-count {
   background: var(--color-primary);
-  color: white;
+  color: var(--color-white);
   border-radius: 50%;
   padding: 0.2em 0.5em;
   font-size: 0.8rem;
@@ -37,26 +100,22 @@
   top: -6px;
   right: -12px;
 }
-/* ==========================================
-   COMPONENT: Cart
-   ========================================== */
 
+/* ---------- Košík ---------- */
 .cart-items {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
   margin-top: var(--space-6);
 }
-
 .cart-item {
   display: flex;
   align-items: center;
-  background-color: var(--color-surface, rgba(255,255,255,0.04));
+  background-color: var(--color-surface, rgba(255, 255, 255, 0.04));
   border-radius: var(--radius-lg);
   padding: var(--space-4);
   box-shadow: var(--shadow-sm);
 }
-
 .cart-item__img {
   width: 100px;
   height: 100px;
@@ -64,19 +123,16 @@
   border-radius: var(--radius-md);
   margin-right: var(--space-4);
 }
-
 .cart-item__info {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
-
 .cart-item__info h3 {
   font-size: var(--font-size-lg);
   margin: 0;
 }
-
 .cart-summary {
   background-color: var(--color-neutral-100);
   border-radius: var(--radius-lg);
@@ -84,19 +140,12 @@
   text-align: center;
   box-shadow: var(--shadow-md);
 }
+.cart-summary strong { font-size: var(--font-size-lg); }
 
-.cart-summary strong {
-  font-size: var(--font-size-lg);
-}
-/* ==========================================
-   COMPONENT: Project Popup
-   ========================================== */
+/* ---------- Popup (studentský projekt) ---------- */
 .popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.8);
   display: flex;
   justify-content: center;
@@ -106,12 +155,10 @@
   visibility: hidden;
   transition: opacity 0.4s ease, visibility 0.4s ease;
 }
-
 .popup-overlay.active {
   opacity: 1;
   visibility: visible;
 }
-
 .popup {
   background: var(--color-white);
   color: var(--color-neutral-900);
@@ -122,353 +169,399 @@
   box-shadow: var(--shadow-xl);
   animation: popup-scale 0.3s ease forwards;
 }
-
 .popup__icon {
   font-size: var(--font-size-4xl);
   margin-bottom: var(--space-3);
 }
-
 .popup__title {
   font-size: var(--font-size-xl);
   margin-bottom: var(--space-3);
   font-weight: 800;
 }
-
 .popup__text {
   font-size: var(--font-size-sm);
   margin-bottom: var(--space-6);
   color: var(--color-neutral-700);
 }
-
 @keyframes popup-scale {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
 
-.btn--small {
-  font-size: var(--font-size-sm);
-  padding: var(--space-2) var(--space-3);
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--color-neutral-950) 0%, var(--color-neutral-800) 100%);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
 }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent, transparent 10px,
+    rgba(255, 69, 0, 0.05) 10px,
+    rgba(255, 69, 0, 0.05) 20px
+  );
+  pointer-events: none;
+}
+.hero__container {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-20) var(--space-4);
+  text-align: center;
+}
+.hero__title {
+  font-size: var(--font-size-6xl);
+  margin-bottom: var(--space-6);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+.hero__title span {
+  color: var(--color-primary);
+  display: block;
+}
+.hero__subtitle {
+  font-size: var(--font-size-xl);
+  margin: 0 auto var(--space-8);
+  color: var(--color-neutral-300);
+  max-width: 600px;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: var(--font-size-sm);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+.btn--primary:hover,
+.btn--primary:focus {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+.btn--secondary {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary);
+}
+.btn--secondary:hover,
+.btn--secondary:focus {
+  background-color: var(--color-primary);
+  transform: translateY(-2px);
+}
+.btn--large { padding: var(--space-5) var(--space-10); font-size: var(--font-size-base); }
+.btn--small  { padding: var(--space-2) var(--space-4); font-size: var(--font-size-xs); }
+
+/* ---------- Product Card ---------- */
+.product-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+  position: relative;
+}
+.product-card:hover {
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-4px);
+}
+.product-card__badge {
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-4);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 1;
+}
+.product-card__image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  background-color: var(--color-neutral-100);
+}
+.product-card__content { padding: var(--space-6); }
+.product-card__category {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-neutral-500);
+  margin-bottom: var(--space-2);
+  font-weight: 600;
+}
+.product-card__title {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-3);
+  font-weight: 700;
+  color: var(--color-neutral-900); /* sjednoceno (původně hardcode 'black') */
+}
+.product-card__price {
+  font-size: var(--font-size-2xl);
+  font-weight: 900;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+.product-card__rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-sm);
+}
+.product-card__stars { color: var(--color-secondary); }
+
+/* Horizontální varianta */
+.product-card--horizontal { display: flex; flex-direction: row; }
+.product-card--horizontal .product-card__image {
+  width: 200px;
+  height: auto;
+}
+
+/* ---------- Info Box ---------- */
+.info-box {
+  background-color: var(--color-neutral-50);
+  border-left: 4px solid var(--color-primary);
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-6);
+}
+.info-box__icon {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-4);
+}
+.info-box__title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+}
+.info-box__text {
+  color: var(--color-neutral-600);
+  line-height: 1.7;
+}
+.info-box--dark {
+  background-color: var(--color-neutral-900);
+  color: var(--color-white);
+  border-left-color: var(--color-accent);
+}
+.info-box--dark .info-box__text { color: var(--color-neutral-300); }
+
+/* ---------- Disclaimer ---------- */
+.disclaimer {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: var(--color-white);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  margin: var(--space-8) 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: var(--font-size-lg);
+  box-shadow: var(--shadow-2xl);
+  border: 3px solid var(--color-secondary);
+}
+.disclaimer__icon {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--space-3);
+}
+
+/* ---------- Statistiky ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-6);
+}
+.stat-card {
+  background: linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-neutral-800) 100%);
+  color: var(--color-white);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--color-primary);
+}
+.stat-card__value {
+  font-size: var(--font-size-5xl);
+  font-weight: 900;
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+.stat-card__label {
+  font-size: var(--font-size-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-neutral-300);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: var(--space-12) 0 var(--space-6);
+}
+.footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+.footer__column h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-4);
+  color: var(--color-primary);
+}
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.footer__link {
+  color: var(--color-neutral-300);
+  font-size: var(--font-size-sm);
+  transition: color 0.3s ease;
+}
+.footer__link:hover,
+.footer__link:focus { color: var(--color-primary); }
+
+.footer__bottom {
+  border-top: 1px solid var(--color-neutral-800);
+  padding-top: var(--space-6);
+  text-align: center;
+  color: var(--color-neutral-400);
+  font-size: var(--font-size-sm);
+}
+.footer__bottom p { margin-bottom: var(--space-2); }
+
+/* ---------- Mobile úpravy košíku (ponecháno zde; může být i v layout.css) ---------- */
 @media (max-width: 768px) {
   .cart-item {
     flex-direction: column;
     align-items: flex-start;
   }
-
   .cart-item__img {
     width: 100%;
     height: 200px;
     margin-bottom: var(--space-3);
   }
+  .cart-summary { margin-top: var(--space-6); }
+}
+/* === NAV / HEADER – mobilní fixy === */
+.header { --header-h: 64px; }            /* výška headeru na mobilech */
+.header__container { min-height: var(--header-h); }
 
-  .cart-summary {
-    margin-top: var(--space-6);
-  }
-}
-.nav__list {
-    display: flex;
-    gap: var(--space-8);
-    align-items: center;
-}
-.nav__link {
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: var(--font-size-sm);
-    letter-spacing: 0.05em;
-    transition: color 0.3s ease;
-    position: relative;
-}
-.nav__link:hover,
-.nav__link:focus {
-    color: var(--color-primary);
-}
-.nav__link::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-primary);
-    transition: width 0.3s ease;
-}
-.nav__link:hover::after,
-.nav__link:focus::after {
-    width: 100%;
-}
-.nav__toggle {
+@media (max-width: 768px) {
+  /* menší vertikální padding + logo => nižší header */
+  .header__container { padding: var(--space-3) var(--space-4); }
+  .header__logo { font-size: var(--font-size-xl); }
+
+  /* burger a košík vedle sebe; košík posuneme k pravému okraji */
+  .header__cart { order: 2; margin-left: auto; margin-right: var(--space-3); }
+  .nav__toggle { display: flex; order: 3; }
+
+  /* .nav__list jako overlay pod headerem, s vlastním scrollováním */
+  .nav { position: relative; }
+  .nav__list {
     display: none;
-    flex-direction: column;
-    gap: 4px;
-    padding: var(--space-2);
-}
-.nav__toggle span {
-    width: 24px;
-    height: 3px;
-    background-color: var(--color-white);
-    transition: all 0.3s ease;
-}
-.hero {
-    background: linear-gradient(135deg, var(--color-neutral-950) 0%, var(--color-neutral-800) 100%);
-    color: var(--color-white);
-    position: relative;
-    overflow: hidden;
-}
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
+    position: fixed;
+    top: var(--header-h);
     left: 0;
     right: 0;
-    bottom: 0;
-    background-image: 
-        repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 69, 0, 0.05) 10px, rgba(255, 69, 0, 0.05) 20px);
-    pointer-events: none;
-}
-.hero__container {
-    position: relative;
-    z-index: 1;
-    padding: var(--space-20) var(--space-4);
-    text-align: center;
-}
-.hero__title {
-    font-size: var(--font-size-6xl);
-    margin-bottom: var(--space-6);
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-}
-.hero__title span {
-    color: var(--color-primary);
-    display: block;
-}
-.hero__subtitle {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--space-8);
-    color: var(--color-neutral-300);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.btn {
-    display: inline-block;
-    padding: var(--space-4) var(--space-8);
-    border-radius: var(--radius-md);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    font-size: var(--font-size-sm);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-.btn--primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    box-shadow: var(--shadow-md);
-}
-.btn--primary:hover,
-.btn--primary:focus {
-    background-color: var(--color-primary-dark);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
-}
-.btn--secondary {
     background-color: var(--color-black);
-    color: var(--color-white);
-    border: 2px solid var(--color-primary);
-}
-.btn--secondary:hover,
-.btn--secondary:focus {
-    background-color: var(--color-primary);
-    transform: translateY(-2px);
-}
-.btn--large {
-    padding: var(--space-5) var(--space-10);
-    font-size: var(--font-size-base);
-}
-.btn--small {
-    padding: var(--space-2) var(--space-4);
-    font-size: var(--font-size-xs);
-}
-.product-card {
-    background-color: var(--color-white);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: all 0.3s ease;
-    position: relative;
-}
-.product-card:hover {
-    box-shadow: var(--shadow-xl);
-    transform: translateY(-4px);
-}
-.product-card__badge {
-    position: absolute;
-    top: var(--space-4);
-    right: var(--space-4);
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-    text-transform: uppercase;
-    z-index: 1;
-}
-.product-card__image {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    background-color: var(--color-neutral-100);
-}
-.product-card__content {
+    flex-direction: column;
     padding: var(--space-6);
-}
-.product-card__category {
-    font-size: var(--font-size-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-neutral-500);
-    margin-bottom: var(--space-2);
-    font-weight: 600;
-}
-.product-card__title {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--space-3);
-    font-weight: 700;
-    color: black;
+    box-shadow: var(--shadow-lg);
+    max-height: calc(100vh - var(--header-h));
+    overflow: auto;
+    z-index: 999;
+  }
+  .nav__list.active { display: flex; }
 
+  /* větší tap-targety */
+  .nav__link { padding: var(--space-2) 0; font-size: var(--font-size-base); }
 }
-.product-card__price {
-    font-size: var(--font-size-2xl);
-    font-weight: 900;
-    color: var(--color-primary);
-    margin-bottom: var(--space-4);
+
+/* pro větší mobily/tablety může být header o chlup vyšší */
+@media (min-width: 426px) and (max-width: 768px) {
+  .header { --header-h: 72px; }
 }
-.product-card__rating {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    margin-bottom: var(--space-4);
-    font-size: var(--font-size-sm);
+/* Jednoduchý fix rozložení v headeru */
+.header__container {
+  display: flex;
+  align-items: center;
 }
-.product-card__stars {
-    color: var(--color-secondary);
+
+/* Logo vlevo, vše ostatní doprava */
+.header__logo {
+  margin-right: auto;
 }
-.product-card--horizontal {
-    display: flex;
-    flex-direction: row;
+
+/* Pořadí prvků bez změny HTML:
+   1) logo (automaticky vlevo díky margin-right:auto)
+   2) nav
+   3) košík
+   4) burger */
+.nav { order: 2; }
+.header__cart { order: 3; margin-left: var(--space-4); }
+.nav__toggle { order: 4; margin-left: var(--space-3); }
+/* === DETAIL PRODUKTU – mobilní optimalizace === */
+
+/* Desktop: trochu vzduchu mezi obrázkem a textem */
+.product-card.product-card--horizontal {
+  gap: var(--space-6);
+  align-items: stretch;
 }
+
+/* Desktop: obrázek drží rozumnou šířku */
 .product-card--horizontal .product-card__image {
-    width: 200px;
+  width: 320px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Mobile stack + přívětivé proporce */
+@media (max-width: 768px) {
+  /* Karta na výšku, příjemné vnitřní odsazení */
+  .product-card.product-card--horizontal {
+    flex-direction: column;
+    padding: var(--space-4);
+  }
+
+  /* Obrázek přes celou šířku, čtvercový výřez (nepřetéká) */
+  .product-card--horizontal .product-card__image {
+    width: 100%;
     height: auto;
-}
-.info-box {
-    background-color: var(--color-neutral-50);
-    border-left: 4px solid var(--color-primary);
-    padding: var(--space-6);
-    border-radius: var(--radius-md);
-    margin-bottom: var(--space-6);
-}
-.info-box__icon {
-    font-size: var(--font-size-3xl);
-    margin-bottom: var(--space-4);
-}
-.info-box__title {
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-    margin-bottom: var(--space-3);
-}
-.info-box__text {
-    color: var(--color-neutral-600);
-    line-height: 1.7;
-}
-.info-box--dark {
-    background-color: var(--color-neutral-900);
-    color: var(--color-white);
-    border-left-color: var(--color-accent);
-}
-.info-box--dark .info-box__text {
-    color: var(--color-neutral-300);
-}
-.disclaimer {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: var(--color-white);
-    padding: var(--space-6);
-    border-radius: var(--radius-xl);
-    margin: var(--space-8) 0;
-    text-align: center;
-    font-weight: 700;
-    font-size: var(--font-size-lg);
-    box-shadow: var(--shadow-2xl);
-    border: 3px solid var(--color-secondary);
-}
-.disclaimer__icon {
-    font-size: var(--font-size-3xl);
-    margin-bottom: var(--space-3);
-}
-.stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--space-6);
-}
-.stat-card {
-    background: linear-gradient(135deg, var(--color-neutral-900) 0%, var(--color-neutral-800) 100%);
-    color: var(--color-white);
-    padding: var(--space-8);
-    border-radius: var(--radius-lg);
-    text-align: center;
-    box-shadow: var(--shadow-lg);
-    border: 2px solid var(--color-primary);
-}
-.stat-card__value {
-    font-size: var(--font-size-5xl);
-    font-weight: 900;
-    color: var(--color-primary);
-    margin-bottom: var(--space-3);
-}
-.stat-card__label {
-    font-size: var(--font-size-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-neutral-300);
-}
-.footer {
-    background-color: var(--color-black);
-    color: var(--color-white);
-    padding: var(--space-12) 0 var(--space-6) 0;
-}
-.footer__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: var(--space-8);
-    margin-bottom: var(--space-8);
-}
-.footer__column h3 {
-    font-size: var(--font-size-lg);
-    margin-bottom: var(--space-4);
-    color: var(--color-primary);
-}
-.footer__links {
-    display: flex;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-bottom: 1px solid var(--color-neutral-200);
+  }
+
+  /* Menší typografie pro čitelnost na mobilu */
+  .product-card__title { font-size: var(--font-size-2xl); }
+  .product-card__price { font-size: var(--font-size-xl); }
+
+  /* Tlačítka pod sebe, přes celou šířku */
+  .product-card--horizontal .flex {
     flex-direction: column;
     gap: var(--space-3);
+  }
+  .product-card--horizontal .btn {
+    width: 100%;
+  }
 }
-.footer__link {
-    color: var(--color-neutral-300);
-    font-size: var(--font-size-sm);
-    transition: color 0.3s ease;
-}
-.footer__link:hover,
-.footer__link:focus {
-    color: var(--color-primary);
-}
-.footer__bottom {
-    border-top: 1px solid var(--color-neutral-800);
-    padding-top: var(--space-6);
-    text-align: center;
-    color: var(--color-neutral-400);
-    font-size: var(--font-size-sm);
-}
-.footer__bottom p {
-    margin-bottom: var(--space-2);
-}
+

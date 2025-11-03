@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NovaModa — Urban Street Wear</title>
-  <meta name="description" content="Fiktivní e-shop s urban streetwear módou. Studentský projekt." />
+  <meta name="description" content="Fiktivní e-shop s urban streetwear módou. Studentský projekt.">
+  <meta name="theme-color" content="#FF4500">
 
-  <!-- CSS (beze změn) -->
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/tokens.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/utilities.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/components.css" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/utilities.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
+
 
 <body>
   <!-- HEADER -->
   <header class="header">
-    <div class="header__container container">
-      <a href="#home" class="header__logo">Nova<span>Moda</span></a>
+  <div class="header__container container">
+    <a href="#home" class="header__logo">Nova<span>Moda</span></a>
 
-      <button class="nav__toggle" aria-label="Otevřít menu">
-        <span></span><span></span><span></span>
-      </button>
+    <!-- Košík MIMO .nav__list, aby neroztahoval mobilní menu -->
+    <a href="#kosik" class="header__cart" aria-label="Košík">
+      🛒 <span id="cart-count" class="cart-count">0</span>
+    </a>
 
-      <nav class="nav">
-        <ul class="nav__list">
-          <li><a href="#home" class="nav__link">Domů</a></li>
-          <li><a href="#katalog" class="nav__link">Katalog</a></li>
-          <li><a href="#kontakt" class="nav__link">Kontakt</a></li>
-          <a href="#kosik" class="header__cart" aria-label="Košík">
-          🛒 <span id="cart-count" class="cart-count">0</span>
-          </a>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <button class="nav__toggle" aria-label="Otevřít menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <ul class="nav__list">
+        <li><a href="#home" class="nav__link">Domů</a></li>
+        <li><a href="#katalog" class="nav__link">Katalog</a></li>
+        <li><a href="#kontakt" class="nav__link">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
   <!-- APP ROOT -->
   <main id="app"></main>
-
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
@@ -52,11 +56,13 @@
 
         <div class="footer__column">
           <h3>Navigace</h3>
-          <div class="footer__links">
-            <a href="#home" class="footer__link">Domů</a>
-            <a href="#katalog" class="footer__link">Katalog</a>
-            <a href="#kontakt" class="footer__link">Kontakt</a>
-          </div>
+          <nav aria-label="Spodní navigace">
+            <div class="footer__links">
+              <a href="#home" class="footer__link">Domů</a>
+              <a href="#katalog" class="footer__link">Katalog</a>
+              <a href="#kontakt" class="footer__link">Kontakt</a>
+            </div>
+          </nav>
         </div>
 
         <div class="footer__column">
@@ -76,19 +82,25 @@
     </div>
   </footer>
 
+  <!-- STUDENTSKÝ PROJEKT POPUP -->
+  <div id="project-popup" class="popup-overlay" role="dialog" aria-modal="true" aria-labelledby="popup-title" aria-describedby="popup-desc">
+    <div class="popup">
+      <div class="popup__icon" aria-hidden="true">⚠️</div>
+      <h2 id="popup-title" class="popup__title">STUDENTSKÝ PROJEKT</h2>
+      <p id="popup-desc" class="popup__text">
+        Tyto stránky byly vytvořeny v rámci školního projektu.
+        Obsah je <strong>fiktivní</strong> a neslouží ke komerčním účelům.
+      </p>
+      <button id="popup-close" class="btn btn--primary">Rozumím</button>
+    </div>
+  </div>
+
   <!-- JS -->
   <script defer src="js/main.js"></script>
-  <!-- STUDENTSKÝ PROJEKT POPUP -->
-<div id="project-popup" class="popup-overlay">
-  <div class="popup">
-    <div class="popup__icon">⚠️</div>
-    <h2 class="popup__title">STUDENTSKÝ PROJEKT</h2>
-    <p class="popup__text">
-      Tyto stránky byly vytvořeny v rámci školního projektu.  
-      Obsah je <strong>fiktivní</strong> a neslouží ke komerčním účelům.
-    </p>
-    <button id="popup-close" class="btn btn--primary">Rozumím</button>
-  </div>
-</div>
+  <noscript>
+    <div class="container" style="padding:1rem 0;">
+      Pro plnou funkčnost těchto stránek povolte prosím JavaScript.
+    </div>
+  </noscript>
 </body>
 </html>
