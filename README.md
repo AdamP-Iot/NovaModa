@@ -28,8 +28,8 @@ NovaModa/
 
 Autor
 
-**Jméno:** Adam Picka  
-**E-mail:** adam.picka2@seznam.cz  
-**Studijní program:** Aplikovaná informatika, FIM UHK 
-**LinkedIn:** https://www.linkedin.com/in/adam-picka-798194388/
+Jméno: Adam Picka
+E-mail: adam.picka2@seznam.cz  
+Studijní program: Aplikovaná informatika, FIM UHK 
+LinkedIn: https://www.linkedin.com/in/adam-picka-798194388/
 ```
