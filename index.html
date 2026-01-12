@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jedná se o fiktivní studentský e-shop s urban streetwear módou">
+  <meta name="theme-color" content="#FF4500">
+  <title>NovaModa</title>
+  <!-- CSS -->
+     <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <a href="#home" class="header-logo">Nova<span>Moda</span></a>
+      <a href="#kosik" class="header-cart" aria-label="Košík">🛒</a>
+      <div class="cart-icon">2</div>
+      <button class="nav-toggle" aria-label="Otevřít menu" aria-controls="main.nav" aria-expanded="false">
+      <span></span><span></span><span></span>
+      </button>
+      <nav class="nav" id="main-nav">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Domů</a></li>
+          <li><a href="#katalog" class="nav-link">Katalog</a></li>
+          <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div id="home">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-container">
+          <h1 class="hero-title">
+            Urban Style
+            <span>Tvůj Street Wear</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Objev nejnovější kolekci urban módy. <br>
+            Autentický streetwear styl pro ty, kteří nejdou s davem.
+          </p>
+
+          <div class="flex gap-4 justify-center">
+            <a href="#katalog" class="btn btn--primary">Prohlédnout kolekci</a>
+            <a href="#kontakt" class="btn btn--secondary">Zjistit více</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- DISCLAIMER -->
+      <div class="section">
+        <div class="container">
+          <div class="disclaimer">
+            <div class="disclaimer-icon">⚠️</div>
+            <strong>STUDENTSKÝ PROJEKT:</strong>
+            <span> Tyto stránky byly vytvořeny v rámci školního projektu: <strong>Obsah je fiktivní.</strong></span>
+          </div>
+        </div>
+    </div>
+
+      <!-- STATISTIKY -->
+      <div class="section">
+        <div class="container">
+          <div class="stats">
+            <div class="stat-card">
+              <div class="stat-card-value">500+</div>
+              <div class="stat-card-label">Produktů</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-value">10k+</div>
+              <div class="stat-card-label">Zákazníků</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-value">15</div>
+              <div class="stat-card-label">Značek</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-value">4.8★</div>
+              <div class="stat-card-label">Hodnocení</div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+      <!-- FEATURED PRODUKTY  -->
+      <section class="section section--dark">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Nejnovější produkty</h2>
+            <p class="section-subtitle">Vybrali jsme pro vás ty nejžhavější kousky z naší kolekce.</p>
+          </div>
+
+          <div class="grid grid--3">
+            <!-- MIKINA -->
+            <article class="product-card"
+                     data-id="mikina1"
+                     data-title="Urban Black Hoodie"
+                     data-category="Mikiny"
+                     data-price="1 299 Kč"
+                     data-rating="★★★★★ (127)"
+                     data-badge="Novinka"
+                     data-image="https://images.unsplash.com/photo-1614214191247-5b2d3a734f1b?q=80&w=764&auto=format&fit=crop"
+                     data-description="Prémiová mikina s kapucí inspirovaná městským stylem. Vyrobená z kvalitní bavlny pro maximální pohodlí. Minimalistický design, ideální pro každodenní nošení.">
+              <span class="product-card-badge">Novinka</span>
+              <img src="https://images.unsplash.com/photo-1614214191247-5b2d3a734f1b?q=80&w=764&auto=format&fit=crop"
+                   alt="Urban Black Hoodie"
+                   class="product-card-image">
+              <div class="product-card-content">
+                <div class="product-card-category">Mikiny</div>
+                <h3 class="product-card-title">Urban Black Hoodie</h3>
+                <div class="product-card-rating">★★★★★</div>
+                <div class="product-card-price">1 299 Kč</div>
+                <button class="btn btn--primary" data-open-detail>Detail produktu</button>
+              </div>
+            </article>
+
+            <!-- TRIČKO -->
+            <article class="product-card"
+                     data-id="tee1"
+                     data-title="Oversized Street Tee"
+                     data-category="Trička"
+                     data-price="599 Kč"
+                     data-rating="★★★★☆ (98)"
+                     data-badge="-30%"
+                     data-image="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&h=300&fit=crop"
+                     data-description="Oversized tričko z měkké bavlny s minimalistickým logem a volnějším střihem.">
+              <span class="product-card-badge">-30%</span>
+              <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&h=300&fit=crop"
+                   alt="Oversized Street Tee"
+                   class="product-card-image">
+              <div class="product-card-content">
+                <div class="product-card-category">Trička</div>
+                <h3 class="product-card-title">Oversized Street Tee</h3>
+                <div class="product-card-rating">★★★★☆</div>
+                <div class="product-card-price">599 Kč</div>
+                <button class="btn btn--primary" data-open-detail>Detail produktu</button>
+              </div>
+            </article>
+
+            <!-- BUNDA -->
+            <article class="product-card"
+                     data-id="bunda1"
+                     data-title="Midnight Windbreaker"
+                     data-category="Bundy"
+                     data-price="1 999 Kč"
+                     data-rating="★★★★☆ (52)"
+                     data-badge="Limitka"
+                     data-image="https://images.unsplash.com/photo-1710165052772-7f2c3aa5444a?q=80&w=764&auto=format&fit=crop"
+                     data-description="Lehká streetwear bunda s voděodolným povrchem a reflexními prvky.">
+              <span class="product-card-badge">Limitka</span>
+              <img src="https://images.unsplash.com/photo-1710165052772-7f2c3aa5444a?q=80&w=764&auto=format&fit=crop"
+                   alt="Midnight Windbreaker"
+                   class="product-card-image">
+              <div class="product-card-content">
+                <div class="product-card-category">Bundy</div>
+                <h3 class="product-card-title">Midnight Windbreaker</h3>
+                <div class="product-card-rating">★★★★☆</div>
+                <div class="product-card-price">1 999 Kč</div>
+                <button class="btn btn--primary" data-open-detail>Detail produktu</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- KATALOG -->
+    <section id="katalog" class="is-hidden section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Katalog</h2>
+          <p class="section-subtitle">
+            Kompletní přehled našich produktů – mikiny, trička, bundy, kalhoty i doplňky.
+          </p>
+        </div>
+
+        <div class="grid grid--3">
+          <!-- MIKINA -->
+          <article class="product-card"
+                   data-id="mikina1"
+                   data-title="Urban Black Hoodie"
+                   data-category="Mikiny"
+                   data-price="1 299 Kč"
+                   data-rating="★★★★★ (127)"
+                   data-badge="Novinka"
+                   data-image="https://images.unsplash.com/photo-1614214191247-5b2d3a734f1b?q=80&w=764&auto=format&fit=crop"
+                   data-description="Prémiová mikina s kapucí inspirovaná městským stylem. Vyrobená z kvalitní bavlny pro maximální pohodlí. Minimalistický design, ideální pro každodenní nošení.">
+            <span class="product-card-badge">Novinka</span>
+            <img src="https://images.unsplash.com/photo-1614214191247-5b2d3a734f1b?q=80&w=764&auto=format&fit=crop"
+                 alt="Urban Black Hoodie"
+                 class="product-card-image">
+            <div class="product-card-content">
+              <div class="product-card-category">Mikiny</div>
+              <h3 class="product-card-title">Urban Black Hoodie</h3>
+              <div class="product-card-rating">★★★★★</div>
+              <div class="product-card-price">1 299 Kč</div>
+              <button class="btn btn--primary" data-open-detail>Detail produktu</button>
+            </div>
+          </article>
+
+          <!-- TRIČKO -->
+          <article class="product-card"
+                   data-id="tee1"
+                   data-title="Oversized Street Tee"
+                   data-category="Trička"
+                   data-price="599 Kč"
+                   data-rating="★★★★☆ (98)"
+                   data-badge="-30%"
+                   data-image="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&h=300&fit=crop"
+                   data-description="Oversized tričko z měkké bavlny s minimalistickým logem a volnějším střihem.">
+            <span class="product-card-badge">-30%</span>
+            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&h=300&fit=crop"
+                 alt="Oversized Street Tee"
+                 class="product-card-image">
+            <div class="product-card-content">
+              <div class="product-card-category">Trička</div>
+              <h3 class="product-card-title">Oversized Street Tee</h3>
+              <div class="product-card-rating">★★★★☆</div>
+              <div class="product-card-price">599 Kč</div>
+              <button class="btn btn--primary" data-open-detail>Detail produktu</button>
+            </div>
+          </article>
+
+          <!-- BUNDA -->
+          <article class="product-card"
+                   data-id="bunda1"
+                   data-title="Midnight Windbreaker"
+                   data-category="Bundy"
+                   data-price="1 999 Kč"
+                   data-rating="★★★★☆ (52)"
+                   data-badge="Limitka"
+                   data-image="https://images.unsplash.com/photo-1710165052772-7f2c3aa5444a?q=80&w=764&auto=format&fit=crop"
+                   data-description="Lehká streetwear bunda s voděodolným povrchem a reflexními prvky.">
+            <span class="product-card-badge">Limitka</span>
+            <img src="https://images.unsplash.com/photo-1710165052772-7f2c3aa5444a?q=80&w=764&auto=format&fit=crop"
+                 alt="Midnight Windbreaker"
+                 class="product-card-image">
+            <div class="product-card-content">
+              <div class="product-card-category">Bundy</div>
+              <h3 class="product-card-title">Midnight Windbreaker</h3>
+              <div class="product-card-rating">★★★★☆</div>
+              <div class="product-card-price">1 999 Kč</div>
+              <button class="btn btn--primary" data-open-detail>Detail produktu</button>
+            </div>
+          </article>
+
+          <!-- KALHOTY -->
+          <article class="product-card"
+                   data-id="cargo1"
+                   data-title="Cargo Utility Pants"
+                   data-category="Kalhoty"
+                   data-price="1 499 Kč"
+                   data-rating="★★★★★"
+                   data-badge=""
+                   data-image="https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=687&auto=format&fit=crop"
+                   data-description="Funkční cargo kalhoty s praktickými kapsami a odolným materiálem.">
+            <img src="https://images.unsplash.com/photo-1548883354-7622d03aca27?q=80&w=687&auto=format&fit=crop"
+                 alt="Cargo Utility Pants"
+                 class="product-card-image">
+            <div class="product-card-content">
+              <div class="product-card-category">Kalhoty</div>
+              <h3 class="product-card-title">Cargo Utility Pants</h3>
+              <div class="product-card-rating">★★★★★</div>
+              <div class="product-card-price">1 499 Kč</div>
+              <button class="btn btn--primary" data-open-detail>Detail produktu</button>
+            </div>
+          </article>
+
+          <!-- ČEPICE -->
+          <article class="product-card"
+                   data-id="cap1"
+                   data-title="Urban Fit Cap"
+                   data-category="Doplňky"
+                   data-price="399 Kč"
+                   data-rating="★★★★★"
+                   data-badge=""
+                   data-image="https://images.unsplash.com/photo-1500964935344-6219dea133e4?q=80&w=765&auto=format&fit=crop"
+                   data-description="Stylová čepice, která dokonale doladí každý outfit.">
+            <img src="https://images.unsplash.com/photo-1500964935344-6219dea133e4?q=80&w=765&auto=format&fit=crop"
+                 alt="Urban Fit Cap"
+                 class="product-card-image">
+            <div class="product-card-content">
+              <div class="product-card-category">Doplňky</div>
+              <h3 class="product-card-title">Urban Fit Cap</h3>
+              <div class="product-card-rating">★★★★★</div>
+              <div class="product-card-price">399 Kč</div>
+              <button class="btn btn--primary" data-open-detail>Detail produktu</button>
+            </div>
+          </article>
+
+          <!-- BOTY -->
+          <article class="product-card"
+                   data-id="sneakers1"
+                   data-title="Nova Sneakers"
+                   data-category="Boty"
+                   data-price="2 499 Kč"
+                   data-rating="★★★★"
+                   data-badge=""
+                   data-image=""
+                   data-description="Ikonické tenisky propojující street styl a pohodlí. Lehká konstrukce a odolná podrážka pro celodenní nošení.">
+            <img src="https://plus.unsplash.com/premium_photo-1685175199155-110c178cc43a?q=80&w=687&auto=format&fit=crop"
+                 alt="Nova Sneakers"
+                 class="product-card-image">
+            <div class="product-card-content">
+              <div class="product-card-category">Boty</div>
+              <h3 class="product-card-title">Nova Sneakers</h3>
+              <div class="product-card-rating">★★★★</div>
+              <div class="product-card-price">2 499 Kč</div>
+              <button class="btn btn--primary" data-open-detail>Detail produktu</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAIL -->
+    <section id="detail" class="is-hidden section">
+      <div class="container">
+        <div class="product-card-image2">
+          <img id="detail-image"
+               src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+               alt=""
+               class="product-card-image">
+          <div class="product-card-content">
+            <div id="detail-category" class="product-card-category"></div>
+            <h2 id="detail-title" class="product-card-title">Název produktu</h2>
+            <div id="detail-rating" class="product-card-rating"></div>
+            <div id="detail-price" class="product-card-price"></div>
+            <p id="detail-description" class="mb-4"></p>
+            <div class="flex gap-4">
+              <button id="detail-add-btn" class="btn btn--primary" data-add="">Do košíku</button>
+              <a href="#katalog" class="btn btn--secondary">Zpět do katalogu</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <div id="kontakt" class="is-hidden">
+      <section class="hero" style="padding: var(--space-12) 0;">
+        <div class="hero-container">
+          <h2 class="hero-title">Kontakt</h2>
+          <p class="hero-subtitle">Máte dotazy? Napište nám!</p>
+        </div>
+      </section>
+
+      <div class="section">
+        <div class="container">
+          <div class="info-box">
+            <div class="info-box-title">Kontakt</div>
+            <div class="info-box-text">
+              <p><strong>E-mail:</strong> <a href="mailto:info@novamoda.cz">info@novamoda.cz</a></p>
+              <p><strong>Telefon:</strong> +420 777 123 456</p>
+              <p><strong>Adresa:</strong> Ulice 123, Hradec Králové</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- KOŠÍK -->
+    <section id="kosik" class="is-hidden section">
+      <div class="container">
+        <h2 class="section-title">Váš košík</h2>
+        <div id="cart-items" class="cart-items">
+           <article class="product-card cart-item">
+        <div class="product-card-content">
+          <div class="product-card-category">Mikiny</div>
+          <h3 class="product-card-title">Urban Black Hoodie</h3>
+          <div class="product-card-price">1 299 Kč</div>
+        </div>
+      </article>
+      <article class="product-card cart-item">
+        <div class="product-card-content">
+          <div class="product-card-category">Trička</div>
+          <h3 class="product-card-title">Oversized Street Tee</h3>
+          <div class="product-card-price">599 Kč</div>
+        </div>
+      </article>
+        </div>
+        <div class="cart-summary mt-6">
+          <p><strong>Celkem:</strong> <span id="cart-total">1 898 Kč</span></p>
+          <button id="checkout-btn" class="btn btn--primary ">Pokračovat k platbě 💳</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>O nás</h3>
+          <p>NovaModa je studentský projekt zaměřený na urban a streetwear módu.</p>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Navigace</h3>
+          <nav aria-label="Spodní navigace">
+            <div class="footer-links">
+              <a href="#home" class="footer-link">Domů</a>
+              <a href="#katalog" class="footer-link">Katalog</a>
+              <a href="#kontakt" class="footer-link">Kontakt</a>
+            </div>
+          </nav>
+        </div>
+
+        <div class="footer-column">
+          <h3>Sledujte nás</h3>
+          <div class="footer-links">
+            <a href="#" class="footer-link">Instagram</a>
+            <a href="#" class="footer-link">Facebook</a>
+            <a href="#" class="footer-link">TikTok</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 NovaModa. Studentský projekt — FIM UHK.</p>
+        <p>Poslední aktualizace: <time datetime="2025-11-03">20. 11. 2025</time></p>
+        <p>Kontakt: <a href="mailto:info@novamoda.cz">info@novamoda.cz</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>

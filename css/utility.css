@@ -1,0 +1,9 @@
+.container{max-width:1020px; margin: auto; padding:0 var(--space-4)}
+.disclaimer span{display: block;}
+.is-hidden{display: none !important}
+.section-subtitle2{
+color:var(--color-neutral-800);
+font-size: var(--font-size-lg);
+max-width: 600px;
+margin: var(--space-6)auto 0;
+}
