@@ -1,14 +1,14 @@
 ```
-# Popis projektu
+Popis projektu
 
 Projekt NovaModa představuje fiktivní e-shop s urban/streetwear oblečením.
-
 
 Cílem je demonstrovat schopnost vytvořit komponentovou knihovnu webového rozhraní pomocí HTML5, CSS (rozděleného do modulů) a JavaScriptu.
 
 Web je kompletně responzivní, přístupný a využívá systematické stylování pomocí design tokens, komponentové struktury a utility tříd.
 
-## Struktura projektu
+
+Struktura projektu
 
 NovaModa/
 │
@@ -26,7 +26,7 @@ NovaModa/
 │
 ├── index.html # Hlavní stránka
 
-## Autor
+Autor
 
 **Jméno:** Adam Picka  
 **E-mail:** adam.picka2@seznam.cz  
