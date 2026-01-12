@@ -1,3 +1,4 @@
+```
 # Popis projektu
 
 Projekt NovaModa představuje fiktivní e-shop s urban/streetwear oblečením.
@@ -31,3 +32,4 @@ NovaModa/
 **E-mail:** adam.picka2@seznam.cz  
 **Studijní program:** Aplikovaná informatika, FIM UHK 
 **LinkedIn:** https://www.linkedin.com/in/adam-picka-798194388/
+```
